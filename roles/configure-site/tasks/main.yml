@@ -1,0 +1,17 @@
+  - name: copy configuration file {{config_file}}
+    copy:
+      src: files/{{config_file}}
+      dest: "{{folder}}/sites-available/"
+
+  - name: enabling  site {{config_file}}
+    file:
+      src: "{{folder}}/sites-available/{{config_file}}"
+      dest: "{{folder}}/sites-enabled/{{config_file}}"
+      state: link
+    when: enabled
+
+  - name: diabling site {{config_file}}
+    file:
+      path: "{{folder}}/sites-enabled/{{config_file}}"
+      state: absent
+    when: not enabled
