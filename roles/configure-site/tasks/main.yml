@@ -10,7 +10,7 @@
       state: link
     when: enabled
 
-  - name: diabling site {{config_file}}
+  - name: disabling site {{config_file}}
     file:
       path: "{{folder}}/sites-enabled/{{config_file}}"
       state: absent

@@ -14,13 +14,13 @@
         src: files/snippets/ssl-params.conf
         dest: "{{folder}}/snippets/"
   roles:
-    - { role: configure-site, config_file: 0000-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: 2017-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: 2016-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: jira-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: wiki-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: c4p-confitura-pl.conf, enabled: true }
-    - { role: configure-site, config_file: crowd-confitura-pl.conf, enabled: true }
+    - { role: configure-site, config_file: 0000-confitura-pl.conf }
+    - { role: configure-site, config_file: 2017-confitura-pl.conf }
+    - { role: configure-site, config_file: 2016-confitura-pl.conf }
+    - { role: configure-site, config_file: jira-confitura-pl.conf }
+    - { role: configure-site, config_file: wiki-confitura-pl.conf }
+    - { role: configure-site, config_file: c4p-confitura-pl.conf }
+    - { role: configure-site, config_file: crowd-confitura-pl.conf }
   post_tasks:
     - name: reload new configuration
       command: nginx -s reload
