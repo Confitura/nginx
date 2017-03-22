@@ -8,6 +8,11 @@
       copy:
         src: files/nginx.conf
         dest: "{{folder}}"
+
+    - name: copy ssl configuration snippet
+      copy:
+        src: files/snippets/ssl-params.conf
+        dest: "{{folder}}/snippets/"
   roles:
     - { role: configure-site, config_file: 0000-confitura-pl.conf, enabled: true }
     - { role: configure-site, config_file: 2017-confitura-pl.conf, enabled: true }
